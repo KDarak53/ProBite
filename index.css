@@ -540,17 +540,14 @@ button:active::before {
     width: 100px;
     height: 100px;
     flex-shrink: 0;
-    animation: rotateLogo 4s linear infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .gmp-logo svg {
     width: 100%;
     height: 100%;
-}
-
-@keyframes rotateLogo {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
 }
 
 .about-card-content {
@@ -724,32 +721,274 @@ button:active::before {
 }
 
 @media (max-width: 600px) {
-    .nav-menu {
-        gap: 20px;
+    /* Navbar Mobile Fixes */
+    .navbar {
+        padding: 8px 0;
+    }
+    
+    .nav-container {
+        width: 95%;
+        padding: 10px 0;
     }
     
     .nav-logo {
+        font-size: 1.1rem;
+        font-weight: 900;
+        white-space: nowrap;
+    }
+    
+    .nav-menu {
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+    
+    .nav-item {
+        min-width: auto;
+    }
+    
+    .nav-link {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+        white-space: nowrap;
+    }
+    
+    /* Header Mobile Fixes */
+    header {
+        padding: 15px 0;
+    }
+    
+    header h1 {
+        font-size: 1.6rem;
+        margin: 0;
+    }
+    
+    .tagline {
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+        margin: 5px 0 0 0;
+    }
+    
+    /* Main Content */
+    main {
+        width: 95%;
+    }
+    
+    /* Scanner Section */
+    #scanner-section {
+        margin-bottom: 20px;
+    }
+    
+    .scanner-box {
+        width: 150px;
+        height: 150px;
+    }
+    
+    #scan-btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+    
+    /* Cards */
+    .card {
+        margin-bottom: 15px;
+        padding: 8px;
+        box-shadow: 3px 3px 0px var(--black);
+    }
+    
+    .card h2 {
+        font-size: 1rem;
+        padding-bottom: 3px;
+    }
+    
+    .card img {
+        max-width: 100%;
+    }
+    
+    /* About Page */
+    .about-main {
+        width: 95%;
+        padding: 20px 0;
+    }
+    
+    .product-image-container {
+        padding: 15px;
+    }
+    
+    .about-card {
+        padding: 15px;
+        margin-bottom: 15px;
+        box-shadow: 3px 3px 0px var(--black);
+    }
+    
+    .about-card h3 {
         font-size: 1rem;
     }
     
     .about-card-header {
         flex-direction: column;
         align-items: center;
+        gap: 10px;
+    }
+    
+    .gmp-logo {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .features-grid {
         grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .feature-card {
+        padding: 12px;
+    }
+    
+    .feature-icon {
+        font-size: 1.5rem;
+    }
+    
+    .feature-item p {
+        font-size: 0.8rem;
     }
     
     .ingredients-list {
         grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .ingredient-item p {
+        font-size: 0.7rem;
+    }
+    
+    .ingredient-icon {
+        font-size: 1.8rem;
+    }
+    
+    /* Products Page */
+    .products-main {
+        width: 95%;
+        padding: 20px 0;
+    }
+    
+    .section-title {
+        font-size: 1.4rem;
+        padding-bottom: 8px;
+        margin-bottom: 20px;
     }
     
     .products-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .product-card {
+        box-shadow: 3px 3px 0px var(--black);
+        border: 2px solid var(--black);
     }
     
     .product-image {
         height: 250px;
+    }
+    
+    .product-info {
+        padding: 15px;
+    }
+    
+    .product-info h3 {
+        font-size: 1.1rem;
+        margin-bottom: 3px;
+    }
+    
+    .product-info .flavor {
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+    }
+    
+    .product-highlights {
+        gap: 6px;
+        margin-bottom: 10px;
+    }
+    
+    .product-highlights span {
+        padding: 4px 8px;
+        font-size: 0.65rem;
+    }
+    
+    .product-btn {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+    }
+    
+    /* Table for Nutritional Info */
+    .nutritional-table table {
+        font-size: 0.75rem;
+    }
+    
+    .nutritional-table th,
+    .nutritional-table td {
+        padding: 6px 5px;
+    }
+    
+    .table-note {
+        font-size: 0.65rem;
+        padding: 8px;
+    }
+}
+
+/* Tablet/Medium Screen Optimization */
+@media (max-width: 768px) and (min-width: 601px) {
+    .nav-container {
+        width: 95%;
+    }
+    
+    .nav-logo {
+        font-size: 1.2rem;
+    }
+    
+    .nav-menu {
+        gap: 15px;
+    }
+    
+    .nav-link {
+        font-size: 0.9rem;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .tagline {
+        font-size: 0.85rem;
+    }
+    
+    main {
+        width: 95%;
+    }
+    
+    .card {
+        padding: 12px;
+    }
+    
+    .scanner-box {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    .product-image {
+        height: 280px;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
     }
 }
